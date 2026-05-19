@@ -1,0 +1,39 @@
+======================================================================
+CLASSIFICATION REPORT - Minimum Distance Classifier
+======================================================================
+
+Method: Class centroids computed from augmented training data.
+Distance metric: Euclidean distance in standardized feature space.
+
+Object: Circle
+  True class:      Circular
+  Predicted class:  Circular  [CORRECT]
+  Min distance:     0.1391
+  All distances:    Elongated: 5.8519, Circular: 0.1391, Irregular: 1.9711, Hollow: 2.6716, Polygonal: 0.4849
+
+Object: Wrench
+  True class:      Elongated
+  Predicted class:  Elongated  [CORRECT]
+  Min distance:     0.2567
+  All distances:    Elongated: 0.2567, Circular: 5.6483, Irregular: 5.0092, Hollow: 6.3899, Polygonal: 5.3407
+
+Object: Hexagon
+  True class:      Polygonal
+  Predicted class:  Polygonal  [CORRECT]
+  Min distance:     0.1453
+  All distances:    Elongated: 5.398, Circular: 0.4552, Irregular: 1.6944, Hollow: 2.7372, Polygonal: 0.1453
+
+Object: Leaf
+  True class:      Irregular
+  Predicted class:  Irregular  [CORRECT]
+  Min distance:     0.0986
+  All distances:    Elongated: 5.2251, Circular: 1.8295, Irregular: 0.0986, Hollow: 3.7334, Polygonal: 1.7229
+
+Object: Washer
+  True class:      Hollow
+  Predicted class:  Hollow  [CORRECT]
+  Min distance:     0.1666
+  All distances:    Elongated: 6.4353, Circular: 2.6437, Irregular: 3.6427, Hollow: 0.1666, Polygonal: 2.6672
+
+Overall Accuracy: 5/5 (100.0%)
+======================================================================
