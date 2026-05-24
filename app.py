@@ -40,9 +40,15 @@ from pipeline.features import extract_features
 # ---------------------------------------------------------------------------
 print("Loading images...")
 image_paths = generate_all()
-IMAGES = {}
+IMAGES = {}        # grayscale — used for processing
+IMAGES_COLOR = {}  # original color — used for display only
 for name in GENERATORS:
     IMAGES[name] = cv2.imread(image_paths[name]["image"], cv2.IMREAD_GRAYSCALE)
+    color = cv2.imread(image_paths[name]["image"], cv2.IMREAD_COLOR)
+    if color is not None:
+        IMAGES_COLOR[name] = cv2.cvtColor(color, cv2.COLOR_BGR2RGB)
+    else:
+        IMAGES_COLOR[name] = IMAGES[name]
 print("Images loaded.\n")
 
 IMAGE_NAMES = list(IMAGES.keys())
@@ -166,7 +172,7 @@ def process_image(
 
     # Return all outputs
     return (
-        original,       # Original image
+        IMAGES_COLOR[image_name],  # Original image (color)
         noisy,          # Noisy image
         restored,       # Restored image
         diff_map,       # Difference map
